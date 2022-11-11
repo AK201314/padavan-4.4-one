@@ -86,7 +86,7 @@ typedef u_int8_t u8;
 #define EVM_RESTART_TRMD		(1ULL << 41)
 #define EVM_RESTART_ARIA		(1ULL << 42)
 #define EVM_RESTART_SCUT		(1ULL << 43)
-#define EVM_RESTART_TTYD		(1ULL << 44)
+#define EVM_RESTART_WIFIDOG			(1ULL << 44)
 #define EVM_RESTART_VLMCSD		(1ULL << 45)
 #define EVM_RESTART_DNSFORWARDER	(1ULL << 47)
 #define EVM_RESTART_SHADOWSOCKS	(1ULL << 48)
@@ -155,7 +155,7 @@ typedef u_int8_t u8;
 #define EVT_RESTART_TRMD		3
 #define EVT_RESTART_ARIA		3
 #define EVT_RESTART_SCUT		1
-#define EVT_RESTART_TTYD		1
+#define EVT_RESTART_WIFIDOG			1
 #define EVT_RESTART_SMARTDNS      	1
 #define EVT_RESTART_VLMCSD		1
 #define EVT_RESTART_SHADOWSOCKS	2

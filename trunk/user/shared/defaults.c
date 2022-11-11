@@ -676,6 +676,25 @@ struct nvram_pair router_defaults[] = {
 	{ "anti_ad", "0" },
 	{ "anti_ad_link", "https://anti-ad.net/anti-ad-for-dnsmasq.conf" },
 	{ "anti_ad_count", "0" },
+#if defined(APP_WIFIDOG)
+	/*wifidog*/
+	{ "wifidog_enable", "0" },
+	{ "wifidog_Daemon", "0" },
+	{ "wifidog_Hostname", "cp.wiwiz.com" },
+	{ "wifidog_HTTPPort", "80" },
+	{ "wifidog_Path", "/as/s/" },
+	{ "wifidog_id", "" },
+	{ "wifidog_lanif", "" },
+	{ "wifidog_wanif", "" },
+	{ "wifidog_Port", "80" },
+	{ "wifidog_Interval", "60" },
+	{ "wifidog_Timeout", "5" },
+	{ "wifidog_MaxConn", "" },
+	{ "wifidog_MACList", "" },
+	{ "wifidog_ADBYBY", "0" },
+	{ "wifidog_Log", "0" },
+	{ "wifidog_Log_Level", "6" },
+#endif
 	/* Pdnsd */
 	{ "dns_enable", "0" },
 	{ "dns_server", "223.5.5.5,114.114.114.114" },

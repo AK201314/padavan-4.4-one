@@ -552,6 +552,11 @@ void stop_dnsforwarder(void);
 void start_dnsforwarder(void);
 void restart_dnsforwarder(void);
 #endif
+#if defined(APP_WIFIDOG)
+void stop_wifidog(void);
+void start_wifidog(void);
+void restart_wifidog(void);
+#endif
 #if defined(APP_ADBYBY)
 void stop_adbyby(void);
 void start_adbyby(void);

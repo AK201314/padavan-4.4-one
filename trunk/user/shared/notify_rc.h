@@ -88,6 +88,7 @@
 #define RCN_RESTART_ALDRIVER	"restart_aldriver"
 #define RCN_RESTART_WIREGUARD	"restart_wireguard"
 #define RCN_RESTART_SQM		"restart_sqm"
+#define RCN_RESTART_WIFIDOG		"restart_wifidog"
 #define RCN_RESTART_REBOOT		"restart_reboot"
 
 ////////////////////////////////////////////////////////////

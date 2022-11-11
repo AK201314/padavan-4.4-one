@@ -1165,6 +1165,12 @@ handle_notifications(void)
 			restart_sqm();
 		}
 #endif
+#if defined(APP_WIFIDOG)
+		else if (strcmp(entry->d_name, RCN_RESTART_WIFIDOG) == 0)
+		{
+			restart_wifidog();
+		}
+#endif
 #if defined(APP_ADBYBY)
 		else if (strcmp(entry->d_name, RCN_RESTART_ADBYBY) == 0)
 		{

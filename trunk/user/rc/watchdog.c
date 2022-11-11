@@ -509,8 +509,16 @@ ntpc_updated_main(int argc, char *argv[])
 		logmessage("NTP Client", "System time changed, offset: %ss", offset);
 		sleep(5);
 		nvram_set_int("ntp_ready", 1);
+#if defined(APP_WIFIDOG)
+		const char *wifidog_iptables = "/tmp/wifidog.save";
+		if (!check_if_file_exist(wifidog_iptables) || !pids("wifidog")){
+			if (nvram_get_int("wifidog_enable") == 1){
+				logmessage("自动启动", "正在启动WiFi Dog");
+				eval("/usr/bin/wifidog.sh","start");
 	}
-
+		}
+#endif
+	}
 	return 0;
 }
 

@@ -1131,6 +1131,27 @@
 	};
 #endif
 
+#if defined(APP_WIFIDOG)
+    struct variable variables_WifidogConf[] = {
+			{"wifidog_enable", "", NULL, EVM_RESTART_WIFIDOG},
+			{"wifidog_Daemon", "", NULL, EVM_RESTART_WIFIDOG},
+			{"wifidog_Hostname", "", NULL, EVM_RESTART_WIFIDOG},
+			{"wifidog_HTTPPort", "", NULL, EVM_RESTART_WIFIDOG},
+			{"wifidog_Path", "", NULL, EVM_RESTART_WIFIDOG},
+			{"wifidog_id", "", NULL, EVM_RESTART_WIFIDOG},
+			{"wifidog_lanif", "", NULL, EVM_RESTART_WIFIDOG},
+			{"wifidog_wanif", "", NULL, EVM_RESTART_WIFIDOG},
+			{"wifidog_Port", "", NULL, EVM_RESTART_WIFIDOG},
+			{"wifidog_Interval", "", NULL, EVM_RESTART_WIFIDOG},
+			{"wifidog_Timeout", "", NULL, EVM_RESTART_WIFIDOG},
+			{"wifidog_MaxConn", "", NULL, EVM_RESTART_WIFIDOG},
+			{"wifidog_MACList", "", NULL, EVM_RESTART_WIFIDOG},
+			{"wifidog_ADBYBY", "", NULL, EVM_RESTART_WIFIDOG},
+			{"wifidog_Log", "", NULL, EVM_RESTART_WIFIDOG},
+			{"wifidog_Log_Level", "", NULL, EVM_RESTART_WIFIDOG},
+			{0,0,0,0}
+	};
+#endif
 #if defined(APP_ADBYBY)
     struct variable variables_AdbybyConf[] = {
 			{"adbyby_enable", "", NULL, EVM_RESTART_ADBYBY},
@@ -1346,6 +1367,9 @@
 #if defined(APP_ADBYBY)
 		{"AdbybyConf",		variables_AdbybyConf},
 #endif
+#if defined(APP_WIFIDOG)
+		{"WifidogConf",		variables_WifidogConf},
+#endif
 #if defined(APP_ADGUARDHOME)
 		{"AdguardHomeConf",		variables_AdguardHomeConf},
 #endif
@@ -1466,6 +1490,9 @@
 #endif
 #if defined(APP_ADBYBY)
 		{EVM_RESTART_ADBYBY,		EVT_RESTART_ADBYBY,		RCN_RESTART_ADBYBY,	0},
+#endif
+#if defined(APP_WIFIDOG)
+		{EVM_RESTART_WIFIDOG,		EVT_RESTART_WIFIDOG,		RCN_RESTART_WIFIDOG,	0},
 #endif
 #if defined(APP_ALIDDNS)
 		{EVM_RESTART_ALIDDNS,		EVT_RESTART_ALIDDNS,		RCN_RESTART_ALIDDNS,	0},

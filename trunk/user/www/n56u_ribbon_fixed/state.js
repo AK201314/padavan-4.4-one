@@ -426,6 +426,9 @@ if (found_app_sqm()){
 if (found_app_frp()){
 	tabtitle[19] = new Array("", "<#menu5_25#>");
 }
+if (found_app_wifidog()){
+	tabtitle[20] = new Array("", "WiFi认证");
+}
 
 //Level 3 Tab title
 
@@ -493,6 +496,11 @@ if (found_app_frp()){
 	tabtitle[9].push('<#menu5_25_1#>');
 	tablink[9].push('Advanced_frp_log.asp');
 }
+if (found_app_wifidog()){
+	wifidog_array = new Array("","Advanced_wifidog.asp");
+	tablink[20] = (wifidog_array);
+}
+
 
 //Level 2 Menu
 menuL2_title = new Array(20)
@@ -535,6 +543,11 @@ if (found_app_sqm()){
 
 if (found_app_frp()){
 	menuL2_title.push("<#menu5_25#>");
+	
+} else menuL2_title.push("");
+
+if (found_app_wifidog()){
+	menuL2_title.push("WiFi认证");
 } else menuL2_title.push("");
 
 menuL2_link  = new Array("", tablink[0][1], tablink[1][1], tablink[2][1], tablink[3][1], tablink[4][1], tablink[5][1], tablink[6][1], tablink[7][1], support_2g_radio() ? tablink[8][1] : "Main_EStatus_Content.asp", tablink[9][1]);
@@ -584,6 +597,9 @@ if (found_app_sqm()){
 
 if (found_app_frp()){
 	menuL2_link.push(frp_array[1]);
+} else menuL2_link.push("");
+if (found_app_wifidog()){
+	menuL2_link.push(wifidog_array[1]);
 } else menuL2_link.push("");
 
 //Level 1 Menu in Gateway, Router mode

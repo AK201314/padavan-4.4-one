@@ -490,6 +490,22 @@ void restart_wireguard(void){
 }
 #endif
 
+#if defined(APP_WIFIDOG)
+void stop_wifidog(void){
+	eval("/usr/bin/wifidog.sh","stop");
+}
+
+void start_wifidog(void){
+	int wifidog_mode = nvram_get_int("wifidog_enable");
+	if ( wifidog_mode == 1)
+		eval("/usr/bin/wifidog.sh","start");
+}
+
+void restart_wifidog(void){
+	stop_wifidog();
+	start_wifidog();
+}
+#endif
 #if defined(APP_ADBYBY)
 void stop_adbyby(void){
 	eval("/usr/bin/adbyby.sh","stop");
@@ -782,6 +798,11 @@ doSystem("/usr/sbin/skipd -d /etc/storage/db");
 #if defined(APP_MENTOHUST)
 	start_mentohust();
 #endif
+#if defined(APP_WIFIDOG)
+	const char *wifidog_iptables = "/tmp/wifidog.save";
+	if (check_if_file_exist(wifidog_iptables) && nvram_get_int("wifidog_enable") == 1)
+		eval("/usr/bin/wifidog.sh","restart");
+#endif
 	system("/usr/bin/iappd.sh restart");
 	system("modprobe xt_TPROXY");
 	system("/usr/bin/iappd.sh test");
@@ -823,6 +844,9 @@ stop_services(int stopall)
 #endif
 #if defined(APP_ADBYBY)
 	stop_adbyby();
+#endif
+#if defined(APP_WIFIDOG)
+	stop_wifidog();
 #endif
 #if defined(APP_DDNSTO)
 	stop_ddnsto();
