@@ -164,44 +164,6 @@ function done_validating(action){
 	</td>
 	</tr>
 	<tr>
-	<th width="30%" style="border: 0 none;">Adbyby兼容</th>
-	<td style="border: 0 none;">
-	<div class="main_itoggle">
-	<div id="wifidog_ADBYBY_on_of">
-	<input type="checkbox" id="wifidog_ADBYBY_fake" <% nvram_match_x("", "wifidog_ADBYBY", "1", "value=1 checked"); %><% nvram_match_x("", "wifidog_ADBYBY", "0", "value=0"); %>  />
-	</div>
-	</div>
-	<div style="position: absolute; margin-left: -10000px;">
-	<input type="radio" value="1" name="wifidog_ADBYBY" id="wifidog_ADBYBY_1" class="input" value="1" <% nvram_match_x("", "wifidog_ADBYBY", "1", "checked"); %> /><#checkbox_Yes#>
-	<input type="radio" value="0" name="wifidog_ADBYBY" id="wifidog_ADBYBY_0" class="input" value="0" <% nvram_match_x("", "wifidog_ADBYBY", "0", "checked"); %> /><#checkbox_No#>
-	</div>
-	</td>
-	</tr>
-	<tr>
-	<th width="30%" style="border: 0 none;">开启日志</th>
-	<td style="border: 0 none;">
-	<div class="main_itoggle">
-	<div id="wifidog_Log_on_of">
-	<input type="checkbox" id="wifidog_Log_fake" <% nvram_match_x("", "wifidog_Log", "1", "value=1 checked"); %><% nvram_match_x("", "wifidog_Log", "0", "value=0"); %>  />
-	</div>
-	</div>
-	<div style="position: absolute; margin-left: -10000px;">
-	<input type="radio" value="1" name="wifidog_Log" id="wifidog_Log_1" class="input" value="1" <% nvram_match_x("", "wifidog_Log", "1", "checked"); %> /><#checkbox_Yes#>
-	<input type="radio" value="0" name="wifidog_Log" id="wifidog_Log_0" class="input" value="0" <% nvram_match_x("", "wifidog_Log", "0", "checked"); %> /><#checkbox_No#>
-	</div>
-	<tr>
-	<th width="30%" style="border: 0 none;">日志等级</th>
-	<td style="border: 0 none;">
-	<select name="wifidog_Log_Level" class="input"  style="width: 110px">
-	<option value="7" <% nvram_match_x("","wifidog_Log_Level", "7","selected"); %>>调试  DEBUG</option>
-	<option value="6" <% nvram_match_x("","wifidog_Log_Level", "6","selected"); %>>信息  INFO (*)</option>
-	<option value="5" <% nvram_match_x("","wifidog_Log_Level", "5","selected"); %>>通知  NOTICE</option>
-	<option value="4" <% nvram_match_x("","wifidog_Log_Level", "4","selected"); %>>警告  WARN</option>
-	<option value="3" <% nvram_match_x("","wifidog_Log_Level", "3","selected"); %>>错误  ERROR</option>
-	</select>
-	<br /><span style="color:#888;">日志路径：/var/log/wifidog.log</span></td>
-	</tr>
-	<tr>
 	<th colspan="2" style="background-color: #E3E3E3;">认证服务器</th>
 	</tr>
 	<tr>
